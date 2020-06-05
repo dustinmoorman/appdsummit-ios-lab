@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <ADEUMInstrumentation/ADEUMInstrumentation.h>
+
 #import "MasterViewController.h"
 #import "CartViewController.h"
 #import "SettingsViewController.h"
@@ -38,6 +40,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSSetUncaughtExceptionHandler(&HandleExceptions);
+    [ADEumInstrumentation initWithKey: "EUM-AAB-AWU"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                           selector:@selector(onDefaultsChanged:)
